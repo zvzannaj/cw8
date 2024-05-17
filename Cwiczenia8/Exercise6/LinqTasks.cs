@@ -165,6 +165,7 @@ namespace Exercise6
         public static IEnumerable<Emp> Task1()
         {
             IEnumerable<Emp> result = null;
+            result = Emps.Where(e => e.Job.Equals("Backend programmer"));
             return result;
         }
 
@@ -174,6 +175,8 @@ namespace Exercise6
         public static IEnumerable<Emp> Task2()
         {
             IEnumerable<Emp> result = null;
+            result = Emps.Where(e => e.Job.Equals("Frontend programmer") && e.Salary > 1000)
+                .OrderByDescending(e => e.Ename);
             return result;
         }
 
